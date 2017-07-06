@@ -1,11 +1,17 @@
-import _ from 'lodash';
+import $ from 'jquery'
+import _ from 'lodash'
+import './index.scss'
+
+var img1 = document.createElement("img");
+img1.src = require("./2.jpg");
+document.body.appendChild(img1);
+
 function component() {
-  var element = document.createElement('div');
+  var $div = $('<div/>')
+ 
+  $div.html(_.join(['Hello', 'webpack'], ' '))
 
-  // Lodash, now imported by this script
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-
-  return element;
+  return $div
 }
 
-document.body.appendChild(component());
+$(document.body).append(component())
