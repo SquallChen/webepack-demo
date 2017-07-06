@@ -1,9 +1,11 @@
 var path = require('path');
+var HtmlwebpackPlugin = require('html-webpack-plugin');
+var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 
 module.exports = {
   entry: './src/index.js',
   output: {
-    filename: 'bundle.js',
+    filename: 'bundle-[hash].js',
     path: path.resolve(__dirname, 'dist')
   },
   devServer: {
@@ -11,6 +13,15 @@ module.exports = {
  	 compress: true,
   	port: 9000
 },
+   plugins: [
+    new HtmlwebpackPlugin({
+      title: 'Webpack-demos',
+      filename: 'index.html'
+    }),
+    new OpenBrowserPlugin({
+      url: 'http://localhost:9000'
+    })
+  ],
   module:{
    loaders:[
 	{
