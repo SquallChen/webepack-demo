@@ -9,7 +9,7 @@ document.body.appendChild(img1);
 function component() {
   var $div = $('<div/>')
  
-  $div.html(_.join(['Hi', 'webpack'], ' '))
+  $div.html(_.join(['Hello', 'webpack'], ' '))
 
   return $div
 }
